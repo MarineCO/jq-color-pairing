@@ -21,7 +21,14 @@ for (i = 0; i < len; i++){
 /*## 2e étape 
 Un click sur le bouton doit mettre cette couleur en fond*/
 
+$('input').click(function(){
+	console.log('ok');
 
+	var coloring = $(this).data('color');
+	$("html").css("backgroundColor", coloring);
+
+
+});
 
 /*## 3e étape
 quand la case #modify-texte est cochée, la couleur du texte
