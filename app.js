@@ -14,34 +14,34 @@ var len = content.length;
 for (i = 0; i < len; i++){
 
 	var couleur = ($(content[i]).data('color'));
-
 	$(content[i]).css("backgroundColor", couleur);
 }
+
+$('.color').click(function(){
+	var couleur = $(this).data('color');
+
+	var fond = test();
+	console.log(fond);
+
+	if (fond){
+		$('.main').css("color", couleur);
+	} else {
+		$("html").css("backgroundColor", couleur);
+	}
+
+});
+
+function test(){
+	return $('#modify-texte').is(':checked');
+}
+
+
 
 
 /*## 2e étape 
 Un click sur le bouton doit mettre cette couleur en fond*/
 
-$('input').click(function(){
-	console.log('ok');
-
-	var coloring = $(this).data('color');
-	$("html").css("backgroundColor", coloring);
-	
 
 /*## 3e étape
 quand la case #modify-texte est cochée, la couleur du texte
 doit etre modifiée */
-
-	function cocher(){
-		$('#modify-texte').is(':checked')
-	};
-
-	if (cocher()){	
-		$('.main').css("color", coloring);
- // coloring ne fonctionne pas pour faire changer la couleur du texte avec les carres 
- // seul une couleur unique fonctionne pr changer couleur qd sélectionné
- // voir comment appliquer pls couleurs.
-	};
-
-});
